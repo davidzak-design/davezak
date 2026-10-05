@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100 Days of Art Challenge · Free Daily Prompts by David Zak</title>
+<meta name="description" content="Join David Zak's free 100 Days of Art challenge. A daily email prompt from the 100 Days of Art Workbook, a progress tracker that fills in as you go, and a 'what should I make today?' generator.">
+<link rel="canonical" href="https://davidzak.com/challenge/">
+<meta property="og:title" content="100 Days of Art Challenge · David Zak">
+<meta property="og:description" content="Make art every day for 100 days. Free daily prompts and a tracker that cheers you on.">
+<meta property="og:image" content="https://davidzak.com/assets/book-share.jpg">
+<meta property="og:url" content="https://davidzak.com/challenge/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Katenila";src:url("/assets/fonts/Katenila.woff2") format("woff2"),url("/assets/fonts/Katenila.ttf") format("truetype");font-display:swap}
+:root{--paper:#FFFDF8;--card:#FFFFFF;--ink:#1D1B19;--muted:#6F6A64;--hair:#EDE6DA;--pink:#E84C88;--pink-soft:#FDE7EF;--peach:#F7D990;--peach-soft:#FDF4DC;--ok:#2E8B57}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 Roboto,system-ui,sans-serif}
+a{color:var(--pink)}
+.wrap{max-width:760px;margin:0 auto;padding:0 18px}
+.script{font-family:Katenila,Caveat,cursive;font-weight:700;letter-spacing:.01em}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+header.top a{color:var(--ink);text-decoration:none;font-weight:700}
+header.top nav a{font-weight:500;color:var(--muted);margin-left:14px;font-size:15px}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center;padding:24px 0 8px}
+.hero h1{font-size:clamp(46px,9vw,78px);line-height:.95;margin:0 0 10px;color:var(--pink)}
+.hero p.lede{font-size:19px;margin:0 0 18px}
+.hero img{width:100%;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.card{background:var(--card);border:1px solid var(--hair);border-radius:14px;padding:22px;margin:18px 0}
+.peach{background:var(--peach-soft);border-color:#F3E3B5}
+.pinkc{background:var(--pink-soft);border-color:#F7C6D8}
+h2{font-size:26px;line-height:1.15;margin:0 0 10px}
+h3{font-size:19px;margin:0 0 6px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.steps div{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:16px}
+.steps b{display:block;font-size:28px;color:var(--pink);font-family:Katenila,Caveat,cursive}
+label{display:block;font-weight:500;margin:12px 0 6px}
+input[type=text],input[type=email],textarea,select{width:100%;padding:12px 14px;border:1px solid #D9D0C2;border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+textarea{min-height:84px;resize:vertical}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.chip{border:1px solid #D9D0C2;background:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-size:15px;cursor:pointer;color:var(--ink)}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn{display:inline-block;background:var(--pink);color:#fff;border:0;border-radius:999px;padding:14px 26px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+.btn:disabled{opacity:.6}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);margin-top:12px}
+.consent input{margin-top:4px}
+.small{font-size:14px;color:var(--muted)}
+.err{color:#B3261E;font-size:15px;margin-top:8px}
+.gen-out{font-size:24px;line-height:1.35;font-weight:500;margin:16px 0 6px;min-height:2.6em}
+.quote{font-size:22px;line-height:1.35;font-weight:500;margin:6px 0 12px}
+.daynum{font-size:64px;line-height:1;color:var(--pink)}
+.bar{height:12px;border-radius:99px;background:var(--hair);overflow:hidden;margin:10px 0}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pink),#F59A5B)}
+.grid{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-top:10px}
+.grid button{aspect-ratio:1;border-radius:50%;border:1.5px solid #D9D0C2;background:#fff;font-size:11px;color:var(--muted);cursor:pointer;padding:0}
+.grid button.done{border-color:transparent;color:#fff;font-weight:700}
+.grid button.today{outline:2px solid var(--ink);outline-offset:2px}
+.grid button.future{opacity:.45;cursor:default}
+.faces{display:flex;gap:8px;flex-wrap:wrap}
+.faces button{font-size:30px;width:56px;height:56px;border-radius:14px;border:1px solid #D9D0C2;background:#fff;cursor:pointer}
+.faces button[aria-pressed=true]{border:2px solid var(--pink);background:var(--pink-soft)}
+.colors{display:flex;gap:8px;flex-wrap:wrap}
+.colors button{width:40px;height:40px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #D9D0C2;cursor:pointer}
+.colors button[aria-pressed=true]{box-shadow:0 0 0 3px var(--ink)}
+.colorkey{font-size:13px;color:var(--muted);margin-top:6px;min-height:1.3em}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+.stats div{background:var(--card);border:1px solid var(--hair);border-radius:12px;padding:12px}
+.stats b{display:block;font-size:28px}
+.milestone{background:var(--ink);color:#fff;border-radius:12px;padding:14px 18px;margin:12px 0;font-weight:500}
+.saved{color:var(--ok);font-weight:700;margin-left:10px}
+.hidden{display:none!important}
+footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px solid var(--hair);margin-top:30px}
+@media(max-width:640px){.hero{grid-template-columns:1fr}.hero img{max-width:260px}.steps{grid-template-columns:1fr}.grid{gap:4px}.stats b{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a href="https://davidzak.com/">David Zak</a><nav><a href="#make">Today's prompt</a><a href="https://davidzak.com/100days/">The book</a></nav></header>
+
+<!-- ============ LANDING ============ -->
+<section id="landing">
+  <div class="hero">
+    <div>
+      <div class="kicker">Free · from the 100 Days of Art Workbook</div>
+      <h1 class="script">100 Days of Art</h1>
+      <p class="lede">Make art every day for 100 days. Get a short email each morning with a thought and a prompt from the workbook, check in with how you feel, and watch your tracker fill up.</p>
+      <a class="btn" href="#join">Start the challenge</a>
+    </div>
+    <img src="/assets/book-hero.jpg" alt="The 100 Days of Art Workbook by David Zak" onerror="this.style.display='none'">
+  </div>
+
+  <div class="steps" style="margin-top:22px">
+    <div><b>1</b><strong>Sign up</strong><br><span class="small">Pick a start date. Day 1 can be today.</span></div>
+    <div><b>2</b><strong>Get a daily prompt</strong><br><span class="small">One short email each morning: a thought, a prompt, a check in button.</span></div>
+    <div><b>3</b><strong>Check in</strong><br><span class="small">Draw your mood, pick your colours, note what you made. Your tracker fills in.</span></div>
+  </div>
+
+  <div class="card" style="margin-top:22px">
+    <p style="margin:0">"During COVID I felt stuck, depressed and anxious. My wife Rebecca suggested I make art every day for 100 days. Daily creativity gave me purpose, something to wake up to, and somewhere to put what I was feeling. If it worked for me, I believe it can work for anyone."</p>
+    <p class="small" style="margin:8px 0 0">David Zak, artist and author of the 100 Days of Art Workbook</p>
+  </div>
+
+  <div class="card pinkc" id="join">
+    <h2>Join the challenge</h2>
+    <p class="small" style="margin-top:0">Free. One email a day for 100 days. Unsubscribe anytime.</p>
+    <form id="signup" novalidate>
+      <label for="su-name">First name</label>
+      <input id="su-name" type="text" autocomplete="given-name" maxlength="40" required>
+      <label for="su-email">Email</label>
+      <input id="su-email" type="email" autocomplete="email" required>
+      <label>When do you want to start?</label>
+      <div class="row" id="su-start"></div>
+      <label class="consent"><input type="checkbox" id="su-consent"> <span>Yes, email me the daily 100 Days of Art prompts from David Zak. I can unsubscribe anytime.</span></label>
+      <div class="err hidden" id="su-err"></div>
+      <p style="margin-top:16px"><button class="btn" id="su-btn" type="submit">Start my 100 days</button></p>
+    </form>
+    <p class="small">Already signed up? Open the link in any of your challenge emails to see your tracker on this device.</p>
+  </div>
+</section>
+
+<!-- ============ TRACKER APP ============ -->
+<section id="app" class="hidden">
+  <div class="card peach" style="margin-top:8px">
+    <div class="kicker" id="app-hello">Welcome back</div>
+    <div class="row" style="align-items:flex-end;justify-content:space-between">
+      <div><div class="daynum script" id="app-daynum">Day 1</div><div class="small" id="app-sub"></div></div>
+      <div class="small" id="app-pct" style="text-align:right"></div>
+    </div>
+    <div class="bar"><i id="app-bar" style="width:0%"></i></div>
+    <div class="milestone hidden" id="app-mile"></div>
+    <p class="quote" id="app-thought"></p>
+    <p style="margin:0"><strong>Today's prompt:</strong> <span id="app-prompt"></span></p>
+  </div>
+
+  <div class="stats">
+    <div><b id="st-done">0</b><span class="small">days done</span></div>
+    <div><b id="st-streak">0</b><span class="small">day streak</span></div>
+    <div><b id="st-left">100</b><span class="small">to go</span></div>
+  </div>
+
+  <div class="card" id="checkin-card">
+    <h2 id="ci-title">Check in for Day 1</h2>
+    <p class="small" style="margin-top:0">The art happens on your own paper or canvas. This is where you keep track, just like the workbook.</p>
+    <label>How do you feel? Pick a face.</label>
+    <div class="faces" id="ci-faces"></div>
+    <label for="ci-feel">I feel…</label>
+    <input id="ci-feel" type="text" maxlength="40" placeholder="one or two words">
+    <label>Today's colours (tap any that fit)</label>
+    <div class="colors" id="ci-colors"></div>
+    <div class="colorkey" id="ci-colorkey"></div>
+    <label for="ci-made">What did you make?</label>
+    <textarea id="ci-made" maxlength="400" placeholder="A quick note, a thought, a plan for tomorrow"></textarea>
+    <label for="ci-mins">How long? (minutes)</label>
+    <div class="row" id="ci-mins"></div>
+    <div id="ci-questions"></div>
+    <p style="margin-top:18px"><button class="btn" id="ci-save">Mark Day 1 done</button><span class="saved hidden" id="ci-saved">Saved ✓</span></p>
+  </div>
+
+  <div class="card">
+    <h3>Your 100 days</h3>
+    <p class="small" style="margin:0">Each circle fills with the colour of your mood. Tap a past day to see or fill it in.</p>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <div class="card hidden" id="final-card">
+    <h3>Your final project</h3>
+    <p class="small" style="margin-top:0">From the workbook: put on an art show, go live and share your journey, or reflect on how creating every day has changed you.</p>
+    <label for="fp-what">What will you create?</label><textarea id="fp-what" maxlength="600"></textarea>
+    <label for="fp-who">Who will you share it with?</label><input id="fp-who" type="text" maxlength="120">
+    <label for="fp-when">When?</label><input id="fp-when" type="text" maxlength="60">
+    <p class="small">See David's own Day 100 project: <a href="https://davidzak.com/finalproject">davidzak.com/finalproject</a></p>
+  </div>
+
+  <p class="small">Your notes are saved on this device. Your progress circles are saved to your challenge, so they show up from any of your emails. <a href="#" id="app-reset">Not you? Sign out on this device.</a></p>
+</section>
+
+<!-- ============ GENERATOR ============ -->
+<section class="card" id="make">
+  <div class="kicker">Stuck? Start here</div>
+  <h2>What should I make today?</h2>
+  <label>How are you feeling?</label>
+  <div class="row" id="g-mood"></div>
+  <label>How much time do you have?</label>
+  <div class="row" id="g-time"></div>
+  <label>What do you want to use?</label>
+  <div class="row" id="g-medium"></div>
+  <div class="gen-out" id="g-out" aria-live="polite">Tap the button for a prompt.</div>
+  <p class="row"><button class="btn" id="g-btn">Give me a prompt</button><button class="btn ghost" id="g-share">Share this prompt</button></p>
+  <p class="small" id="g-shared"></p>
+</section>
+
+<section class="card peach">
+  <div class="row" style="align-items:center;gap:18px">
+    <img src="/assets/book-share.jpg" alt="" style="width:110px;border-radius:8px" onerror="this.style.display='none'">
+    <div style="flex:1;min-width:220px">
+      <h3>Want the full workbook?</h3>
+      <p style="margin:0 0 10px">A page for every day: mood, colours, a thought, room to plan. Plus check-ins and a final project planner.</p>
+      <a class="btn" href="https://www.amazon.ca/dp/B0H3HF23MY">Get it on Amazon</a> <a href="https://davidzak.com/100days/" style="margin-left:10px">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>The 100 Days of Art challenge is made by <a href="https://davidzak.com/">David Zak</a>. Making art is good for you, and it is not a substitute for professional medical or mental health care. If you are struggling, please also reach out to a doctor or someone you trust.</p>
+  <p><a href="https://davezak.com/">Articles</a> · <a href="https://www.youtube.com/@davezak">YouTube</a> · <a href="https://www.instagram.com/davezak11/">Instagram</a> · <a href="https://www.facebook.com/dave.zak.2025/">Facebook</a></p>
+</footer>
+</div>
+
+<script>
+(function(){
+const API='https://hook.us2.make.com/rrutgpcx5t7won4fueuypinxmcj85t9f';
+const LS='zak100';
+const $=id=>document.getElementById(id);
+const store={get(){try{return JSON.parse(localStorage.getItem(LS))||{}}catch(e){return {}}},set(o){try{localStorage.setItem(LS,JSON.stringify(o))}catch(e){}}};
+let S=store.get(); S.notes=S.notes||{}; S.final=S.final||{};
+let DAYS=[];
+const COLORS=[['red','#E53935','energy, passion, urgency'],['orange','#FB8C00','warmth, enthusiasm, creativity'],['yellow','#FDD835','optimism, joy, attention'],['green','#43A047','calm, balance, renewal'],['blue','#1E88E5','peace, trust, sadness'],['purple','#8E24AA','imagination, mystery, reflection'],['black','#212121','power, grief, depth'],['white','#FFFFFF','clarity, space, new beginnings']];
+const FACES=['😞','🙁','😐','🙂','😄'];
+const MOODCOL=['#7E8A97','#9FA8C4','#C9B37E','#F59A5B','#E84C88'];
+const post=o=>fetch(API,{method:'POST',body:new URLSearchParams(o)}).then(r=>r.json());
+const ymd=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const parse=s=>{const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
+function dayNum(start){const t=new Date();t.setHours(0,0,0,0);return Math.floor((t-parse(start))/864e5)+1}
+function chips(el,list,multi,onchg){el.innerHTML='';list.forEach(([v,l])=>{const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=l;b.dataset.v=v;b.setAttribute('aria-pressed','false');b.onclick=()=>{if(!multi)[...el.children].forEach(c=>c.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'&&multi?'false':'true');onchg&&onchg()};el.appendChild(b)});}
+const picked=el=>[...el.children].filter(c=>c.getAttribute('aria-pressed')==='true').map(c=>c.dataset.v);
+function setPicked(el,vals){[...el.children].forEach(c=>c.setAttribute('aria-pressed',vals.includes(c.dataset.v)?'true':'false'))}
+
+/* ---------- signup ---------- */
+const today=new Date();today.setHours(0,0,0,0);
+const tmr=new Date(today);tmr.setDate(tmr.getDate()+1);
+const mon=new Date(today);mon.setDate(mon.getDate()+((8-mon.getDay())%7||7));
+chips($('su-start'),[[ymd(today),'Today'],[ymd(tmr),'Tomorrow'],[ymd(mon),'Next Monday']],false);
+$('su-start').children[0].setAttribute('aria-pressed','true');
+$('signup').onsubmit=async e=>{e.preventDefault();const err=$('su-err');err.classList.add('hidden');
+  const name=$('su-name').value.replace(/["\\<>]/g,'').trim(),email=$('su-email').value.trim(),start=picked($('su-start'))[0];
+  if(!name||!/^\S+@\S+\.\S+$/.test(email)){err.textContent='Please add your first name and a valid email.';err.classList.remove('hidden');return}
+  if(!$('su-consent').checked){err.textContent='Please tick the box so we can email you the daily prompts.';err.classList.remove('hidden');return}
+  $('su-btn').disabled=true;$('su-btn').textContent='Starting…';
+  try{const r=await post({action:'signup',name,email,start});if(!r.ok)throw 0;S={t:r.t,name,start,state:'0'.repeat(100),notes:{},final:{}};store.set(S);history.replaceState(null,'','?t='+r.t);showApp();window.scrollTo(0,0)}
+  catch(x){err.textContent='Something went wrong. Please try again in a minute.';err.classList.remove('hidden');$('su-btn').disabled=false;$('su-btn').textContent='Start my 100 days'}};
+
+/* ---------- app ---------- */
+let cur=1;
+function stateArr(){return (S.state||'').padEnd(100,'0').slice(0,100).split('')}
+function render(){
+  const n=Math.max(0,Math.min(100,dayNum(S.start)));const arr=stateArr();
+  $('app-hello').textContent='Hi '+(S.name||'artist');
+  const done=arr.filter(c=>c!=='0').length;
+  if(n<1){$('app-daynum').textContent='Day 1';$('app-sub').textContent='Your challenge starts on '+parse(S.start).toDateString()+'. Here is a preview of Day 1.'}
+  else{$('app-daynum').textContent='Day '+Math.min(n,100);$('app-sub').textContent=n>100?'You finished the 100 days. Keep going!':'of 100'}
+  $('app-pct').textContent=done+' / 100';$('app-bar').style.width=done+'%';
+  let streak=0,i=Math.min(Math.max(n,1),100)-1;if(i>=0&&arr[i]==='0')i--;while(i>=0&&arr[i]!=='0'){streak++;i--}
+  $('st-done').textContent=done;$('st-streak').textContent=streak;$('st-left').textContent=100-done;
+  const g=$('grid');g.innerHTML='';
+  for(let i=1;i<=100;i++){const b=document.createElement('button');b.type='button';b.textContent=i;const m=arr[i-1];
+    if(m!=='0'){b.className='done';b.style.background=MOODCOL[(+m)-1]||MOODCOL[2]}
+    if(i===cur)b.classList.add('today');
+    if(i>Math.max(n,1))b.classList.add('future');else b.onclick=()=>{cur=i;loadDay();render();$('checkin-card').scrollIntoView({behavior:'smooth'})};
+    b.setAttribute('aria-label','Day '+i+(m!=='0'?' done':''));g.appendChild(b)}
+  $('final-card').classList.toggle('hidden',n<40);
+}
+function loadDay(){
+  const d=DAYS[cur-1]||{};const note=S.notes[cur]||{};
+  $('app-thought').textContent=d.thought||'';
+  $('app-prompt').textContent=d.prompt||'';
+  const mi=$('app-mile');if(d.milestone){mi.textContent=d.milestone;mi.classList.remove('hidden')}else mi.classList.add('hidden');
+  $('ci-title').textContent='Check in for Day '+cur;$('ci-save').textContent=(stateArr()[cur-1]!=='0'?'Update Day ':'Mark Day ')+cur+' done';
+  [...$('ci-faces').children].forEach((b,i)=>b.setAttribute('aria-pressed',String(note.mood===i+1)));
+  $('ci-feel').value=note.feel||'';$('ci-made').value=note.made||'';
+  setPicked($('ci-colors'),note.colors||[]);setPicked($('ci-mins'),note.mins?[String(note.mins)]:[]);colorKey();
+  const q=$('ci-questions');q.innerHTML='';
+  if(d.checkin){const c=d.checkin;q.innerHTML='<div class="card pinkc" style="margin:18px 0 0"><h3>'+c.title+'</h3><p class="small">'+c.intro+'</p></div>';
+    c.q.forEach((txt,k)=>{const l=document.createElement('label');l.textContent=txt;const t=document.createElement('textarea');t.maxLength=500;t.dataset.k=k;t.value=(note.answers||[])[k]||'';q.appendChild(l);q.appendChild(t)});
+    const o=document.createElement('p');o.className='small';o.textContent=c.outro;q.appendChild(o)}
+  $('ci-saved').classList.add('hidden');
+}
+function colorKey(){const p=picked($('ci-colors'));$('ci-colorkey').textContent=p.map(v=>{const c=COLORS.find(x=>x[0]===v);return c[0]+': '+c[2]}).join(' · ')}
+FACES.forEach((f,i)=>{const b=document.createElement('button');b.type='button';b.textContent=f;b.setAttribute('aria-label','Mood '+(i+1)+' of 5');b.setAttribute('aria-pressed','false');b.onclick=()=>[...$('ci-faces').children].forEach((x,j)=>x.setAttribute('aria-pressed',String(i===j)));$('ci-faces').appendChild(b)});
+COLORS.forEach(([n,hex])=>{const b=document.createElement('button');b.type='button';b.style.background=hex;b.dataset.v=n;b.title=n;b.setAttribute('aria-label',n);b.setAttribute('aria-pressed','false');b.onclick=()=>{b.setAttribute('aria-pressed',String(b.getAttribute('aria-pressed')!=='true'));colorKey()};$('ci-colors').appendChild(b)});
+chips($('ci-mins'),[['5','5'],['15','15'],['30','30'],['60','60'],['120','2 hrs+']],false);
+$('ci-save').onclick=async()=>{
+  const moodIdx=[...$('ci-faces').children].findIndex(b=>b.getAttribute('aria-pressed')==='true');const mood=moodIdx<0?3:moodIdx+1;
+  const answers=[...$('ci-questions').querySelectorAll('textarea')].map(t=>t.value);
+  S.notes[cur]={mood,feel:$('ci-feel').value,colors:picked($('ci-colors')),made:$('ci-made').value,mins:+(picked($('ci-mins'))[0]||0),answers,at:Date.now()};
+  const arr=stateArr();arr[cur-1]=String(mood);S.state=arr.join('');store.set(S);render();
+  $('ci-saved').textContent='Saved ✓';$('ci-saved').classList.remove('hidden');$('ci-save').textContent='Update Day '+cur+' done';
+  try{await post({action:'save',t:S.t,state:S.state})}catch(e){$('ci-saved').textContent='Saved on this device ✓'}};
+['fp-what','fp-who','fp-when'].forEach(id=>{$(id).addEventListener('input',()=>{S.final[id]=$(id).value;store.set(S)})});
+$('app-reset').onclick=e=>{e.preventDefault();if(confirm('Sign out of the challenge on this device? Your progress circles stay saved; notes on this device will be cleared.')){localStorage.removeItem(LS);location.href=location.pathname}};
+async function showApp(){
+  $('landing').classList.add('hidden');$('app').classList.remove('hidden');
+  const n=dayNum(S.start);cur=Math.min(Math.max(n,1),100);
+  ['fp-what','fp-who','fp-when'].forEach(id=>$(id).value=S.final[id]||'');
+  render();loadDay();
+}
+
+/* ---------- generator ---------- */
+const GEN={
+ any:["Make one mark you like, then make ten more around it.","Draw the view from where you are sitting, in one minute.","Fill a page with only circles. Let them overlap.","Make something using only things within arm's reach.","Draw your hand. Then decorate it like a map.","Make a piece in three colours only.","Turn a mistake into the main character.","Make a tiny piece the size of a sticky note.","Pick an object and draw it upside down.","Make something that sounds like your favourite song.","Make a portrait of today's weather.","Draw a door. What is behind it?","Make a pattern from the letters of your name.","Make something you would hang in a room where you feel safe.","Copy one corner of a famous painting, then finish it your way."],
+ paint:["Paint only with the colour of your mood, light to dark.","Paint a sky that has never existed.","Paint with a tool that is not a brush: a card, a sponge, your finger.","Paint a feeling as a shape, then give it a background.","Paint something blurry on purpose. No details allowed.","Paint a small square every minute for ten minutes."],
+ draw:["Draw a continuous line portrait without lifting the pen.","Draw your shoe in 3 minutes, then again in 30 seconds.","Draw the shadows in the room, not the objects.","Draw with your other hand and enjoy the wobble.","Draw twenty tiny faces, each with a different mood.","Draw a plant as if it were a creature."],
+ collage:["Tear (no scissors) three magazine pages and build a face.","Make a collage only from things that are blue.","Cut out ten words and make a tiny poem collage.","Build a landscape from packaging and receipts.","Make a collage of a place you want to visit.","Glue down one image and draw what happens next."],
+ think:["Write down three things you noticed today. Turn one into a doodle.","What colour is your week so far? Make a swatch of it.","List five things you loved as a kid. Draw the smallest one.","Write a title for a painting you have not made yet. Sketch it.","What would your art say if it could talk? Write one sentence, then illustrate it.","Plan your final project in six boxes, like a comic."]
+};
+const MOODMOD={low:" Keep it small and gentle. One mark counts.",restless:" Go fast and messy. Let your hands burn off the energy.",calm:" Take your time and enjoy it.",happy:" Go big and bright.",stuck:" Set a timer and do not stop to judge."};
+const TIMEMOD={5:" You only need 5 minutes.",15:" Give it 15 minutes.",60:" Take an hour and see where it goes."};
+chips($('g-mood'),[['calm','Calm'],['happy','Happy'],['low','Low'],['restless','Restless'],['stuck','Stuck']],false);
+chips($('g-time'),[['5','5 min'],['15','15 min'],['60','An hour']],false);
+chips($('g-medium'),[['any','Anything'],['paint','Paint'],['draw','Draw'],['collage','Collage'],['think','Think + write']],false);
+$('g-medium').children[0].setAttribute('aria-pressed','true');$('g-time').children[1].setAttribute('aria-pressed','true');
+let last='';
+function gen(seed){const m=picked($('g-medium'))[0]||'any';const pool=m==='any'?Object.values(GEN).flat():GEN[m];let p;
+  if(seed!=null)p=Object.values(GEN).flat()[seed%Object.values(GEN).flat().length];else{do{p=pool[Math.floor(Math.random()*pool.length)]}while(p===last&&pool.length>1)}
+  last=p;const mood=picked($('g-mood'))[0],time=picked($('g-time'))[0];
+  $('g-out').textContent=p+(mood?MOODMOD[mood]:'')+(time?TIMEMOD[time]:'');$('g-shared').textContent='';}
+$('g-btn').onclick=()=>gen();
+$('g-share').onclick=async()=>{const txt=$('g-out').textContent;const all=Object.values(GEN).flat();const idx=all.indexOf(last);const url=location.origin+location.pathname+'?p='+idx+'#make';
+  const data={title:'What should I make today?',text:'Today\'s art prompt: '+txt,url};
+  try{if(navigator.share){await navigator.share(data)}else{await navigator.clipboard.writeText(data.text+' '+url);$('g-shared').textContent='Copied! Paste it anywhere.'}}catch(e){}};
+
+/* ---------- boot ---------- */
+const qs=new URLSearchParams(location.search);
+fetch('days.json').then(r=>r.json()).then(async d=>{DAYS=d;
+  const t=qs.get('t');
+  if(qs.get('p')!=null){gen(+qs.get('p'))}
+  if(t&&t!==S.t){try{const r=await post({action:'get',t});if(r.ok){S={t,name:r.name,start:r.start,state:r.state||'0'.repeat(100),notes:{},final:{}};store.set(S)}}catch(e){}}
+  else if(S.t){post({action:'get',t:S.t}).then(r=>{if(r.ok&&r.state){const a=stateArr(),b=r.state.padEnd(100,'0').split('');for(let i=0;i<100;i++)if(a[i]==='0'&&b[i]!=='0')a[i]=b[i];S.state=a.join('');store.set(S);if(!$('app').classList.contains('hidden')){render()}}}).catch(()=>{})}
+  if(S.t&&S.start){showApp();const day=+qs.get('d');if(day>=1&&day<=100&&day<=Math.max(dayNum(S.start),1)){cur=day;loadDay();render()}}
+});
+})();
+</script>
+</body>
+</html>
