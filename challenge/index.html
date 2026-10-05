@@ -324,7 +324,7 @@ $('g-share').onclick=async()=>{const txt=$('g-out').textContent;const all=Object
 
 /* ---------- boot ---------- */
 const qs=new URLSearchParams(location.search);
-fetch('days.json').then(r=>r.json()).then(async d=>{DAYS=d;
+fetch('/challenge/days.json').then(r=>r.json()).then(async d=>{DAYS=d;
   const t=qs.get('t');
   if(qs.get('p')!=null){gen(+qs.get('p'))}
   if(t&&t!==S.t){try{const r=await post({action:'get',t});if(r.ok){S={t,name:r.name,start:r.start,state:r.state||'0'.repeat(100),notes:{},final:{}};store.set(S)}}catch(e){}}
